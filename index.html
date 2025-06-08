@@ -32,10 +32,13 @@
             font-size: 1.2rem;
         }
         .games {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
             margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .game-card {
             background: #161b22;
@@ -44,7 +47,10 @@
             overflow: hidden;
             transition: all 0.2s ease;
             text-decoration: none;
-            display: block;
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            gap: 1.5rem;
         }
         .game-card:hover {
             transform: translateY(-4px);
@@ -52,18 +58,19 @@
             box-shadow: 0 8px 24px rgba(76, 175, 80, 0.2);
         }
         .game-card img {
-            width: 100%;
-            height: 200px;
+            width: 400px;
+            height: 250px;
             object-fit: cover;
-            display: block;
+            border-radius: 8px;
+            flex-shrink: 0;
         }
         .game-card .content {
-            padding: 1.5rem;
+            flex: 1;
         }
         .game-card h2 {
-            color: #4CAF50;
             margin: 0 0 0.5rem 0;
             font-size: 1.5rem;
+            color: #4CAF50;
         }
         .game-card p {
             color: #8b949e;
@@ -86,9 +93,6 @@
 </head>
 <body>
     <div class="container">
-        <h1>YAZBG</h1>
-        <p class="subtitle">Yet Another Zig-Based Game Engine</p>
-        
         <div class="games">
             <a href="yazge/blocks.html" class="game-card">
                 <img src="blocks.png" alt="Blocks game screenshot">
@@ -99,7 +103,9 @@
             </a>
             
             <a href="yazge/spaced.html" class="game-card">
-                <img src="spaced.png" alt="Spaced game screenshot">
+                <div style="width: 400px; height: 250px; overflow: hidden; border-radius: 8px; flex-shrink: 0;">
+                    <img src="spaced.png" alt="Spaced game screenshot" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(2.5);">
+                </div>
                 <div class="content">
                     <h2>Spaced</h2>
                     <p>It's got spaceships and particles.</p>
@@ -108,7 +114,33 @@
         </div>
         
         <div class="footer">
-            <p>Built with <a href="https://ziglang.org">Zig</a>,<a href="https://www.raylib.com">Raylib</a>, and <a href="https://github.com/prime31/zig-ecs">zig-ecs</a>.
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; text-align: center; width: 300px;">
+                    <a href="https://ziglang.org" style="font-weight: bold; color: #4CAF50; text-decoration: none; font-size: 1.1rem;">Zig</a>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: #8b949e;">Fast, modern systems language</p>
+                </div>
+                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; text-align: center; width: 300px;">
+                    <a href="https://www.raylib.com" style="font-weight: bold; color: #4CAF50; text-decoration: none; font-size: 1.1rem;">Raylib</a>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: #8b949e;">Simple 2D/3D graphics library</p>
+                </div>
+                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; text-align: center; width: 300px;">
+                    <a href="https://github.com/prime31/zig-ecs" style="font-weight: bold; color: #4CAF50; text-decoration: none; font-size: 1.1rem;">zig-ecs</a>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: #8b949e;">Entity component system</p>
+                </div>
+                <div style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; text-align: center; width: 300px;">
+                    <a href="https://github.com/emscripten-core/emscripten" style="font-weight: bold; color: #4CAF50; text-decoration: none; font-size: 1.1rem;">Emscripten</a>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: #8b949e;">C/C++ to WebAssembly compiler</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin: 3rem 0 2rem 0; text-align: center;">
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <img src="web.png" alt="Web" style="width: 72px; height: 72px;">
+                <img src="macos.png" alt="macOS" style="width: 72px; height: 72px;">
+                <img src="windows.png" alt="Windows" style="width: 72px; height: 72px;">
+                <img src="linux.png" alt="Linux" style="width: 72px; height: 72px;">
+            </div>
         </div>
     </div>
 </body>
