@@ -1,0 +1,100 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>YAZBG Games</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            color: #8b949e;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+        .games {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .game-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: block;
+        }
+        .game-card:hover {
+            transform: translateY(-4px);
+            border-color: #4CAF50;
+            box-shadow: 0 8px 24px rgba(76, 175, 80, 0.2);
+        }
+        .game-card h2 {
+            color: #4CAF50;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+        }
+        .game-card p {
+            color: #8b949e;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 3rem;
+            color: #6e7681;
+            font-size: 0.9rem;
+        }
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YAZBG</h1>
+        <p class="subtitle">Yet Another Zig-Based Game Engine</p>
+        
+        <div class="games">
+            <a href="yazbe/blocks.html" class="game-card">
+                <h2>Blocks</h2>
+                <p>It's got blocks.</p>
+            </a>
+            
+            <a href="yazbe/spaced.html" class="game-card">
+                <h2>Spaced</h2>
+                <p>It's got spaceships and particles.</p>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>Built with <a href="https://ziglang.org">Zig</a> and <a href="https://www.raylib.com">Raylib</a></p> and <a href="https://github.com/prime31/zig-ecs">zig-ecs</a>
+        </div>
+    </div>
+</body>
+</html>
