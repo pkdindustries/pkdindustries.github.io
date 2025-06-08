@@ -33,15 +33,15 @@
         }
         .games {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-bottom: 2rem;
         }
         .game-card {
             background: #161b22;
             border: 1px solid #30363d;
             border-radius: 8px;
-            padding: 2rem;
+            overflow: hidden;
             transition: all 0.2s ease;
             text-decoration: none;
             display: block;
@@ -50,6 +50,15 @@
             transform: translateY(-4px);
             border-color: #4CAF50;
             box-shadow: 0 8px 24px rgba(76, 175, 80, 0.2);
+        }
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .game-card .content {
+            padding: 1.5rem;
         }
         .game-card h2 {
             color: #4CAF50;
@@ -82,13 +91,19 @@
         
         <div class="games">
             <a href="yazge/blocks.html" class="game-card">
-                <h2>Blocks</h2>
-                <p>It's got blocks.</p>
+                <img src="blocks.png" alt="Blocks game screenshot">
+                <div class="content">
+                    <h2>Blocks</h2>
+                    <p>It's got blocks.</p>
+                </div>
             </a>
             
             <a href="yazge/spaced.html" class="game-card">
-                <h2>Spaced</h2>
-                <p>It's got spaceships and particles.</p>
+                <img src="spaced.png" alt="Spaced game screenshot">
+                <div class="content">
+                    <h2>Spaced</h2>
+                    <p>It's got spaceships and particles.</p>
+                </div>
             </a>
         </div>
         
